@@ -1,13 +1,11 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import { useRouter } from 'vue-router'
+import { ref } from "vue";
 
-const router = useRouter()
-const isSidebarCollapsed = ref(false)
+const isSidebarCollapsed = ref(false);
 
 const toggleSidebar = () => {
-  isSidebarCollapsed.value = !isSidebarCollapsed.value
-}
+  isSidebarCollapsed.value = !isSidebarCollapsed.value;
+};
 </script>
 
 <template>
@@ -15,23 +13,29 @@ const toggleSidebar = () => {
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
       <div class="container-fluid">
-        <button 
-          class="btn btn-link text-light me-3"
-          @click="toggleSidebar"
-        >
+        <button class="btn btn-link text-light me-3" @click="toggleSidebar">
           <i class="fas fa-bars"></i>
         </button>
         <a class="navbar-brand" href="#">Sistema de Gestão</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fas fa-bell"></i> Notificações</a>
+              <a class="nav-link" href="#"
+                ><i class="fas fa-bell"></i> Notificações</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fas fa-user"></i> Perfil</a>
+              <a class="nav-link" href="#"
+                ><i class="fas fa-user"></i> Perfil</a
+              >
             </li>
           </ul>
         </div>
@@ -41,7 +45,7 @@ const toggleSidebar = () => {
     <!-- Sidebar and Content -->
     <div class="wrapper">
       <!-- Sidebar -->
-      <nav :class="['sidebar', { 'collapsed': isSidebarCollapsed }]">
+      <nav :class="['sidebar', { collapsed: isSidebarCollapsed }]">
         <div class="sidebar-content">
           <div class="sidebar-header">
             <h5>Menu</h5>
@@ -162,16 +166,16 @@ const toggleSidebar = () => {
   .sidebar {
     margin-left: -250px;
   }
-  
+
   .sidebar.collapsed {
     margin-left: 0;
   }
-  
+
   .content {
     margin-left: 0;
     width: 100%;
   }
-  
+
   .content-collapsed {
     margin-left: 80px;
     width: calc(100% - 80px);
