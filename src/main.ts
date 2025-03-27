@@ -21,7 +21,7 @@ const router = createRouter({
       path: '/',
       component: SidebarLayout,
       children: [
-        { path: '', redirect: '/dashboard' },
+        { path: '', redirect: '/login' },
         { path: 'dashboard', component: Dashboard },
         { path: 'empresas', component: EmpresaForm },
         { path: 'usuarios', component: UsuarioForm },
